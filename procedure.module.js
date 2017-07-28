@@ -127,4 +127,4 @@ class Procedure extends Meta {
 	}
 }
 
-module.exports = procedure;
+module.exports = Procedure;
