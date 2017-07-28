@@ -61,8 +61,8 @@
 const Meta = require( "ehm" )( );
 
 const EMPTY_STRING = "";
-const PROCEDURE = procedure;
-const SERIALIZE_PROCEDURE_TAG = "[object Procedure:procedure]";
+const PROCEDURE = Function;
+const SERIALIZE_PROCEDURE_TAG = "[object Function:Function]";
 const META_SERIALIZE_PROCEDURE_TAG = Meta.create( PROCEDURE ).serialize( );
 
 class Procedure extends Meta {
@@ -116,7 +116,7 @@ class Procedure extends Meta {
 			@end-meta-configuration
 		*/
 
-		return SERIALIZE_procedure_TAG;
+		return SERIALIZE_PROCEDURE_TAG;
 	}
 
 	isCompatible( tag ){
@@ -127,4 +127,4 @@ class Procedure extends Meta {
 	}
 }
 
-module.exports = procedure;
+module.exports = Procedure;
