@@ -48,7 +48,7 @@
 	@end-submodule-configuration
 
 	@submodule-documentation:
-		Function class wrapper.
+		Procedure class wrapper.
 	@end-submodule-documentation
 
 	@include:
