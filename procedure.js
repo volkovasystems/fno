@@ -68,9 +68,9 @@ const SERIALIZE_FUNCTION_TAG_PATTERN = /^\[function Function(?:\:(.+?))?\]$/;
 class Procedure extends Meta {
 	static [ Symbol.hasInstance ]( instance ){
 		return (
-			typeof instance == "function"
+			typeof instance == FUNCTION_TYPE
 			|| instance instanceof Function
-			|| typeof instance == "function" && instance.name === FUNCTION_NAME
+			|| typeof instance == FUNCTION_TYPE && instance.name === FUNCTION_NAME
 			|| Meta.instanceOf( instance, this )
 		);
 	}
@@ -112,7 +112,7 @@ class Procedure extends Meta {
 	}
 
 	constructor( entity ){
-		super( entity, "Function" );
+		super( entity, FUNCTION_NAME );
 	}
 
 	check( entity ){
@@ -143,7 +143,7 @@ class Procedure extends Meta {
 			@end-meta-configuration
 		*/
 
-		return Meta.create( this.valueOf( ) ).serialize( );
+		return Meta.create( this.valueOf( ) ).serialize( parser );
 	}
 
 	isEqual( procedure ){
