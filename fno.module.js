@@ -36,8 +36,7 @@
 			"author": "Richeve S. Bebedor",
 			"eMail": "richeve.bebedor@gmail.com",
 			"contributors": [
-				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-				"Vinse Vinalon <vinsevinalon@gmail.com>"
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
 			],
 			"repository": "https://github.com/volkovasystems/fno.git",
 			"test": "fno-test.js",
@@ -69,8 +68,23 @@ const Procedure = require( "./procedure.js" );
 const Procedure = require( "./procedure.support.js" );
 //: @end-client
 
-const fno = function fno( ){
-	return Meta.create( Procedure, procedure );
+const fno = function fno( entity ){
+	/*;
+		@meta-configuration:
+			{
+				"entity:required": "function"
+			}
+		@end-meta-configuration
+	*/
+
+	if(
+		typeof entity != "function"
+		|| !( entity instanceof Function )
+	){
+		throw new Error( "invalid function entity" );
+	}
+
+	return Meta.create( Procedure, entity );
 };
 
 harden( "Procedure", Procedure, fno );

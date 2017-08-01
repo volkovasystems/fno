@@ -1,7 +1,7 @@
 "use strict";
 
 /*;
-	@module-license:
+	@test-license:
 		The MIT License (MIT)
 		@mit-license
 
@@ -25,67 +25,67 @@
 		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 		SOFTWARE.
-	@end-module-license
+	@end-test-license
 
-	@module-configuration:
+	@test-configuration:
 		{
 			"package": "fno",
-			"path": "fno/fno.js",
-			"file": "fno.js",
-			"module": "fno",
+			"path": "fno/test.module.js",
+			"file": "test.module.js",
+			"module": "test",
 			"author": "Richeve S. Bebedor",
 			"eMail": "richeve.bebedor@gmail.com",
-			"contributors": [
-				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
-			],
-			"repository": "https://github.com/volkovasystems/fno.git",
-			"test": "fno-test.js",
-			"global": true
+			"repository": "https://github.com/volkovasystems/fno.git"
 		}
-	@end-module-configuration
+	@end-test-configuration
 
-	@module-documentation:
-	 	Function object class wrapper.
-	@end-module-documentation
+	@test-documentation:
+
+	@end-test-documentation
 
 	@include:
 		{
-			"ehm": "ehm",
-			"harden": "harden"
+			"assert": "should",
+			"fno": "fno"
 		}
 	@end-include
 */
 
-const harden = require( "harden" );
-
-const Meta = require( "ehm" )( );
+const assert = require( "should" );
 
 //: @server:
-const Procedure = require( "./procedure.js" );
+const fno = require( "./fno.js" );
 //: @end-server
 
 
 
-const fno = function fno( entity ){
-	/*;
-		@meta-configuration:
-			{
-				"entity:required": "function"
-			}
-		@end-meta-configuration
-	*/
 
-	if(
-		typeof entity != "function"
-		|| !( entity instanceof Function )
-	){
-		throw new Error( "invalid function entity" );
-	}
 
-	return Meta.create( Procedure, entity );
-};
 
-harden( "Procedure", Procedure, fno );
-harden( "Procedure", Procedure, Meta );
+//: @server:
 
-module.exports = fno;
+describe( "fno", ( ) => {
+
+	describe( "`fno( function hello( ){ } )`", ( ) => {
+		it( "should return Procedure instance", ( ) => {
+			let method = function hello( ){ };
+
+			let data = fno( method );
+
+			assert.equal( typeof data, "object" );
+
+			assert.equal( data.constructor.name, "Procedure" );
+
+			assert.equal( data.valueOf( ), method );
+		} );
+	} );
+
+} );
+
+//: @end-server
+
+
+
+
+
+

@@ -70,16 +70,17 @@ const path = require( "path" );
 
 describe( "fno", ( ) => {
 
-	describe( "`fno( )`", ( ) => {
+	describe( "`fno( function hello( ){ } )`", ( ) => {
 		it( "should return Procedure instance", ( ) => {
-			let data = fno( );
+			let method = function hello( ){ };
+
+			let data = fno( method );
 
 			assert.equal( typeof data, "object" );
 
 			assert.equal( data.constructor.name, "Procedure" );
 
-			assert.equal( data.valueOf( ), Function );
-
+			assert.equal( data.valueOf( ), method );
 		} );
 	} );
 
@@ -92,15 +93,17 @@ describe( "fno", ( ) => {
 
 describe( "fno", ( ) => {
 
-	describe( "`fno( )`", ( ) => {
+	describe( "`fno( function hello( ){ } )`", ( ) => {
 		it( "should return Procedure instance", ( ) => {
-			let data = fno( );
+			let method = function hello( ){ };
+
+			let data = fno( method );
 
 			assert.equal( typeof data, "object" );
 
 			assert.equal( data.constructor.name, "Procedure" );
 
-			assert.equal( data.valueOf( ), Function );
+			assert.equal( data.valueOf( ), method );
 		} );
 	} );
 
@@ -115,15 +118,15 @@ describe( "fno", ( ) => {
 
 	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
 
-	describe( "`fno( )`", ( ) => {
+	describe( "`fno( function hello( ){ } )`", ( ) => {
 		it( "should return Procedure instance", ( ) => {
 			//: @ignore:
-			assert.equal( browser.url( bridgeURL ).execute( function( ){ return typeof fno( ); } ).value, "object" );
+			assert.equal( browser.url( bridgeURL ).execute( function( ){ return typeof fno( function hello( ){ } ); } ).value, "object" );
 			//: @end-ignore
 
-			assert.equal( browser.url( bridgeURL ).execute( ( ) => fno( ).constructor.name ).value, "Procedure" );
+			assert.equal( browser.url( bridgeURL ).execute( ( ) => fno( function hello( ){ } ).constructor.name ).value, "Procedure" );
 
-			assert.equal( browser.url( bridgeURL ).execute( ( ) => `${ fno( ).valueOf( ) }` ).value, "Function" );
+			assert.equal( browser.url( bridgeURL ).execute( ( ) => `${ fno( function hello( ){ } ).valueOf( ).name }` ).value, "hello" );
 
 		} );
 	} );

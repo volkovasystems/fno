@@ -60,16 +60,18 @@
 
 const Meta = require( "ehm" )( );
 
-const EMPTY_STRING = "";
-const PROCEDURE = Function;
-const SERIALIZE_PROCEDURE_TAG = "[object Function:Function]";
-const META_SERIALIZE_PROCEDURE_TAG = Meta.create( PROCEDURE ).serialize( );
+const FUNCTION_NAME = "Function";
+const FUNCTION_TYPE = "function";
+
+const SERIALIZE_FUNCTION_TAG_PATTERN = /^\[function Function(?:\:(.+?))?\]$/;
 
 class Procedure extends Meta {
 	static [ Symbol.hasInstance ]( instance ){
 		return (
-			instance === PROCEDURE ||
-			Meta.instanceOf( instance, this )
+			typeof instance == "function"
+			|| instance instanceof Function
+			|| typeof instance == "function" && instance.name === FUNCTION_NAME
+			|| Meta.instanceOf( instance, this )
 		);
 	}
 
@@ -84,27 +86,52 @@ class Procedure extends Meta {
 			@end-meta-configuration
 		*/
 
-		return Meta.create( this, PROCEDURE );
+		let entity = Meta.deserialize( data, parser, this );
+
+		if( entity.isCorrupted( ) ){
+			return entity.revert( );
+		}
+
+		return entity;
 	}
 
-	constructor( ){
-		super( PROCEDURE, "Procedure" );
+	static isCompatible( tag ){
+		/*;
+			@meta-configuration:
+				{
+					"tag": "string"
+				}
+			@end-meta-configuration
+		*/
+
+		if( typeof tag != "string" ){
+			return false;
+		}
+
+		return SERIALIZE_FUNCTION_TAG_PATTERN.test( tag );
 	}
 
-	get [ Meta.OBJECT ]( ){
-		return EMPTY_STRING;
+	constructor( entity ){
+		super( entity, "Function" );
+	}
+
+	check( entity ){
+		return (
+			typeof entity == FUNCTION_TYPE
+			|| entity instanceof Function
+		);
 	}
 
 	get [ Meta.BOOLEAN ]( ){
-		return false;
+		return true;
 	}
 
 	get [ Meta.STRING ]( ){
-		return EMPTY_STRING;
+		return this.valueOf( ).toString( );
 	}
 
 	get [ Meta.NUMBER ]( ){
-		return 0;
+		return NaN;
 	}
 
 	serialize( parser ){
@@ -116,14 +143,18 @@ class Procedure extends Meta {
 			@end-meta-configuration
 		*/
 
-		return SERIALIZE_PROCEDURE_TAG;
+		return Meta.create( this.valueOf( ) ).serialize( );
 	}
 
-	isCompatible( tag ){
-		return (
-			tag === SERIALIZE_PROCEDURE_TAG
-			|| tag === META_SERIALIZE_PROCEDURE_TAG
-		);
+	isEqual( procedure ){
+		if(
+			procedure instanceof Function
+			|| typeof procedure == FUNCTION_TYPE
+		){
+			return this.toString( ) == procedure.toString( );
+		}
+
+		return false;
 	}
 }
 
