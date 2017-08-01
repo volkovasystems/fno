@@ -1,0 +1,32 @@
+{
+	"stats": {
+		"suites": 2,
+		"tests": 1,
+		"passes": 1,
+		"pending": 0,
+		"failures": 0,
+		"start": "2017-08-01T07:55:17.526Z",
+		"end": "2017-08-01T07:55:17.537Z",
+		"duration": 11
+	},
+	"tests": [
+		{
+			"title": "should return Procedure instance",
+			"fullTitle": "fno `fno( function hello( ){ } )` should return Procedure instance",
+			"duration": 4,
+			"currentRetry": 0,
+			"err": {}
+		}
+	],
+	"pending": [],
+	"failures": [],
+	"passes": [
+		{
+			"title": "should return Procedure instance",
+			"fullTitle": "fno `fno( function hello( ){ } )` should return Procedure instance",
+			"duration": 4,
+			"currentRetry": 0,
+			"err": {}
+		}
+	]
+}
