@@ -5,15 +5,15 @@
 		"passes": 1,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-08-01T15:13:48.872Z",
-		"end": "2017-08-01T15:13:48.896Z",
-		"duration": 24
+		"start": "2017-08-02T17:44:52.529Z",
+		"end": "2017-08-02T17:44:52.536Z",
+		"duration": 7
 	},
 	"tests": [
 		{
 			"title": "should return Procedure instance",
 			"fullTitle": "fno `fno( function hello( ){ } )` should return Procedure instance",
-			"duration": 8,
+			"duration": 3,
 			"currentRetry": 0,
 			"err": {}
 		}
@@ -24,7 +24,7 @@
 		{
 			"title": "should return Procedure instance",
 			"fullTitle": "fno `fno( function hello( ){ } )` should return Procedure instance",
-			"duration": 8,
+			"duration": 3,
 			"currentRetry": 0,
 			"err": {}
 		}
