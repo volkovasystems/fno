@@ -1,18 +1,46 @@
 {
 	"stats": {
-		"suites": 2,
-		"tests": 1,
-		"passes": 1,
+		"suites": 6,
+		"tests": 5,
+		"passes": 5,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-08-07T13:41:06.543Z",
-		"end": "2017-08-07T13:41:06.549Z",
-		"duration": 6
+		"start": "2017-09-14T08:15:27.054Z",
+		"end": "2017-09-14T08:15:27.064Z",
+		"duration": 10
 	},
 	"tests": [
 		{
 			"title": "should return Procedure instance",
 			"fullTitle": "fno `fno( function hello( ){ } )` should return Procedure instance",
+			"duration": 3,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return string type",
+			"fullTitle": "fno `fno( function hello( ){ } ).toString( )` should return string type",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return NaN",
+			"fullTitle": "fno `fno( function hello( ){ } ).toNumber( )` should return NaN",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return boolean type",
+			"fullTitle": "fno `fno( function hello( ){ } ).toBoolean( )` should return boolean type",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return object type",
+			"fullTitle": "fno `fno( function hello( ){ } ).toObject( )` should return object type",
 			"duration": 2,
 			"currentRetry": 0,
 			"err": {}
@@ -24,6 +52,34 @@
 		{
 			"title": "should return Procedure instance",
 			"fullTitle": "fno `fno( function hello( ){ } )` should return Procedure instance",
+			"duration": 3,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return string type",
+			"fullTitle": "fno `fno( function hello( ){ } ).toString( )` should return string type",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return NaN",
+			"fullTitle": "fno `fno( function hello( ){ } ).toNumber( )` should return NaN",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return boolean type",
+			"fullTitle": "fno `fno( function hello( ){ } ).toBoolean( )` should return boolean type",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should return object type",
+			"fullTitle": "fno `fno( function hello( ){ } ).toObject( )` should return object type",
 			"duration": 2,
 			"currentRetry": 0,
 			"err": {}

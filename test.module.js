@@ -102,7 +102,7 @@ describe( "fno", ( ) => {
 		} );
 	} );
 
-	describe( "`no( function hello( ){ } ).toObject( )`", ( ) => {
+	describe( "`fno( function hello( ){ } ).toObject( )`", ( ) => {
 		it( "should return object type", ( ) => {
 			let descriptor = fno( function hello( ){ } ).toObject( );
 
@@ -160,7 +160,7 @@ describe( "fno", ( ) => {
 		} );
 	} );
 
-	describe( "`no( function hello( ){ } ).toObject( )`", ( ) => {
+	describe( "`fno( function hello( ){ } ).toObject( )`", ( ) => {
 		it( "should return object type", ( ) => {
 			let descriptor = fno( function hello( ){ } ).toObject( );
 
@@ -249,7 +249,7 @@ describe( "fno", ( ) => {
 		} );
 	} );
 
-	describe( "`no( function hello( ){ } ).toObject( )`", ( ) => {
+	describe( "`fno( function hello( ){ } ).toObject( )`", ( ) => {
 		it( "should return object type", ( ) => {
 			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(

@@ -1,11 +1,11 @@
 {
 	"state": {
-		"passed": 1,
+		"passed": 5,
 		"failed": 0,
 		"skipped": 0
 	},
-	"start": "2017-08-07T13:41:07.659Z",
-	"end": "2017-08-07T13:41:45.835Z",
+	"start": "2017-09-14T08:15:28.234Z",
+	"end": "2017-09-14T08:16:07.623Z",
 	"capabilities": {
 		"browserName": "chrome",
 		"chromeOptions": {
@@ -28,36 +28,100 @@
 		{
 			"name": "fno",
 			"duration": 0,
-			"start": "2017-08-07T13:41:42.430Z",
+			"start": "2017-09-14T08:16:05.819Z",
 			"tests": [],
 			"hooks": []
 		},
 		{
 			"name": "fno",
-			"duration": 3219,
-			"start": "2017-08-07T13:41:42.430Z",
-			"end": "2017-08-07T13:41:45.649Z",
+			"duration": 1625,
+			"start": "2017-09-14T08:16:05.820Z",
+			"end": "2017-09-14T08:16:07.445Z",
 			"tests": [],
 			"hooks": [
 				{
-					"start": "2017-08-07T13:41:42.432Z",
-					"end": "2017-08-07T13:41:42.432Z",
-					"duration": 0,
+					"start": "2017-09-14T08:16:05.821Z",
+					"end": "2017-09-14T08:16:05.822Z",
+					"duration": 1,
 					"title": "\"before each\" hook",
 					"associatedSuite": "fno",
 					"associatedTest": "should return Procedure instance"
 				},
 				{
-					"start": "2017-08-07T13:41:45.648Z",
-					"end": "2017-08-07T13:41:45.648Z",
-					"duration": 0,
+					"start": "2017-09-14T08:16:07.229Z",
+					"end": "2017-09-14T08:16:07.230Z",
+					"duration": 1,
 					"title": "\"after each\" hook",
 					"associatedSuite": "fno",
 					"associatedTest": "should return Procedure instance"
 				},
 				{
-					"start": "2017-08-07T13:41:45.649Z",
-					"end": "2017-08-07T13:41:45.649Z",
+					"start": "2017-09-14T08:16:07.230Z",
+					"end": "2017-09-14T08:16:07.231Z",
+					"duration": 1,
+					"title": "\"before each\" hook",
+					"associatedSuite": "fno",
+					"associatedTest": "should return string type"
+				},
+				{
+					"start": "2017-09-14T08:16:07.280Z",
+					"end": "2017-09-14T08:16:07.281Z",
+					"duration": 1,
+					"title": "\"after each\" hook",
+					"associatedSuite": "fno",
+					"associatedTest": "should return string type"
+				},
+				{
+					"start": "2017-09-14T08:16:07.281Z",
+					"end": "2017-09-14T08:16:07.281Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "fno",
+					"associatedTest": "should return NaN"
+				},
+				{
+					"start": "2017-09-14T08:16:07.334Z",
+					"end": "2017-09-14T08:16:07.334Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "fno",
+					"associatedTest": "should return NaN"
+				},
+				{
+					"start": "2017-09-14T08:16:07.335Z",
+					"end": "2017-09-14T08:16:07.335Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "fno",
+					"associatedTest": "should return boolean type"
+				},
+				{
+					"start": "2017-09-14T08:16:07.389Z",
+					"end": "2017-09-14T08:16:07.389Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "fno",
+					"associatedTest": "should return boolean type"
+				},
+				{
+					"start": "2017-09-14T08:16:07.389Z",
+					"end": "2017-09-14T08:16:07.389Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "fno",
+					"associatedTest": "should return object type"
+				},
+				{
+					"start": "2017-09-14T08:16:07.444Z",
+					"end": "2017-09-14T08:16:07.445Z",
+					"duration": 1,
+					"title": "\"after each\" hook",
+					"associatedSuite": "fno",
+					"associatedTest": "should return object type"
+				},
+				{
+					"start": "2017-09-14T08:16:07.446Z",
+					"end": "2017-09-14T08:16:07.446Z",
 					"duration": 0,
 					"title": "\"after all\" hook",
 					"associatedSuite": "fno"
@@ -66,15 +130,79 @@
 		},
 		{
 			"name": "`fno( function hello( ){ } )`",
-			"duration": 3218,
-			"start": "2017-08-07T13:41:42.431Z",
-			"end": "2017-08-07T13:41:45.649Z",
+			"duration": 1410,
+			"start": "2017-09-14T08:16:05.820Z",
+			"end": "2017-09-14T08:16:07.230Z",
 			"tests": [
 				{
 					"name": "should return Procedure instance",
-					"start": "2017-08-07T13:41:42.431Z",
-					"end": "2017-08-07T13:41:45.648Z",
-					"duration": 3217,
+					"start": "2017-09-14T08:16:05.821Z",
+					"end": "2017-09-14T08:16:07.229Z",
+					"duration": 1408,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`fno( function hello( ){ } ).toString( )`",
+			"duration": 51,
+			"start": "2017-09-14T08:16:07.230Z",
+			"end": "2017-09-14T08:16:07.281Z",
+			"tests": [
+				{
+					"name": "should return string type",
+					"start": "2017-09-14T08:16:07.230Z",
+					"end": "2017-09-14T08:16:07.280Z",
+					"duration": 50,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`fno( function hello( ){ } ).toNumber( )`",
+			"duration": 53,
+			"start": "2017-09-14T08:16:07.281Z",
+			"end": "2017-09-14T08:16:07.334Z",
+			"tests": [
+				{
+					"name": "should return NaN",
+					"start": "2017-09-14T08:16:07.281Z",
+					"end": "2017-09-14T08:16:07.334Z",
+					"duration": 53,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`fno( function hello( ){ } ).toBoolean( )`",
+			"duration": 55,
+			"start": "2017-09-14T08:16:07.334Z",
+			"end": "2017-09-14T08:16:07.389Z",
+			"tests": [
+				{
+					"name": "should return boolean type",
+					"start": "2017-09-14T08:16:07.335Z",
+					"end": "2017-09-14T08:16:07.389Z",
+					"duration": 54,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`fno( function hello( ){ } ).toObject( )`",
+			"duration": 56,
+			"start": "2017-09-14T08:16:07.389Z",
+			"end": "2017-09-14T08:16:07.445Z",
+			"tests": [
+				{
+					"name": "should return object type",
+					"start": "2017-09-14T08:16:07.389Z",
+					"end": "2017-09-14T08:16:07.444Z",
+					"duration": 55,
 					"state": "pass"
 				}
 			],
